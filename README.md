@@ -601,7 +601,8 @@ Metrics are available at:
 http://HOSTNAME:9104/metrics
 ```
 
-In the repositiry you can find the file ETL REPLICATOR.json. It is a preconfigured dashbaord for the metrics exposed by the program. You can import on your PMM or Grafana.
+In the repository you can find the file ETL REPLICATOR.json. It is a preconfigured dashboard for the metrics exposed by the program. You can import it on your PMM or Grafana.
+
 
 
 The exporter currently exposes the following custom metrics.
