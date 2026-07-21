@@ -1,0 +1,60 @@
+# Source DB configuration
+source_db:
+  host: <HOSTNAME/IP>
+  port: 3306
+  user: <REPLICA USER>
+  password: <REPLICA USER PWD>
+
+# Target DB configuration
+target_db:
+  host: <HOSTNAME/IP>
+  port: 3306
+  user: <USERNAME>
+  password: <PWD>
+  database: <TARGET_DB>
+  autocommit: 1
+
+# Schema to be replicated from Source
+replicated_schema: <DB_TO_REPLICATE>
+
+
+# Target connection Time Zone 
+# Mandatory. It needs to be set to the same time zone used on both source and target 
+time_zone: "Europe/Rome"
+
+# Tables to be completely ignored (comma separated list)
+ignored_tables: <DB_NAME.TABLE_NAME>
+
+
+# Tables with filter condition on a field
+filtered_tables:
+  <DB_NAME.TABLE_NAME_1>:
+    field: <FIELD>
+    allowed_values: [<VALUE1>,<VALUE2>,...<VALUEn>]
+  <DB_NAME.TABLE_NAME_2>:
+    field: <FIELD>
+    allowed_values: [<VALUE1>,<VALUE2>,...<VALUEn>]
+  <DB_NAME.TABLE_NAME_n>:
+    field: <FIELD>
+    allowed_values: [<VALUE1>,<VALUE2>,...<VALUEn>]
+
+# Tables with filter condition as a JOIN on another table
+conditional_replication:
+    <DB_NAME.TABLE_NAME_1>:
+      join:
+        table: <DB_NAME.TABLE_TO_JOIN>
+        left_field: <LEFT_FIELD>
+        right_field: <RIGHT_FIELD>
+      where:
+        field: <FIELD_NAME>
+        allowed_values: [<VALUE1>,<VALUE2>,...<VALUEn>]
+
+
+binlog_pos_file: binlog_pos.txt
+
+logging:
+  file: replicator.log
+  level: "INFO" # possible values "INFO", "WARNING", "ERROR", "DEBUG"
+  max_size_mb: 100 
+  backup_count: 5
+ 

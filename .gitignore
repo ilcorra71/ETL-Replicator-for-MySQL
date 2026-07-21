@@ -1,0 +1,48 @@
+# Secrets and local configuration
+.env
+.env.*
+config.json
+secrets.json
+credentials.json
+*.pem
+*.key
+*.p12
+*.crt
+
+# Logs
+*.log
+logs/
+
+# Temporary files
+*.tmp
+*.swp
+.DS_Store
+
+# IDE
+.idea/
+.vscode/
+
+# Build output
+build/
+dist/
+target/
+bin/
+
+# Dependencies
+node_modules/
+vendor/
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Go
+*.exe
+*.test
+*.out
+
+# Java
+*.class
+target/

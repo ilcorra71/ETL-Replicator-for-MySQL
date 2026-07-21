@@ -1,0 +1,14 @@
+[Unit]
+Description=ETL Python Script
+After=network.target
+
+[Service]
+ExecStart=/usr/bin/python3 /home/myuser/etl_replicator.py
+WorkingDirectory=/home/myuser
+Restart=always
+RestartSec=5
+User=myuser
+Environment=PYTHONUNBUFFERED=1
+
+[Install]
+WantedBy=multi-user.target
