@@ -1004,13 +1004,7 @@ Test thoroughly, maintain backups, monitor the process, and validate replicated 
 
 ## License
 
-Add the license selected for the project in a `LICENSE` file and update this section accordingly.
-
-For example:
-
-```text
 Licensed under the Apache License, Version 2.0.
-```
 
 ## Contributing
 
